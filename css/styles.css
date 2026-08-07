@@ -1,0 +1,33 @@
+/* Configuración general */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+
+/* Contenedores principales */
+
+header,
+section,
+footer {
+
+    padding: 40px;
+
+}
+
+
+/* Sección del equipo */
+
+.team-container {
+
+    display: flex;
+    gap: 20px;
+
+}
