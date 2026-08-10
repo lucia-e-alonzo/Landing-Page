@@ -1,0 +1,52 @@
+/* HU-5 · Base: estilo y diseño adaptable */
+
+/* Paleta y tipografía consistente */
+:root {
+    --color-bg: #f5f5f7;
+    --color-text: #1c2030;
+    --color-accent: #4759ff;
+    --font-main: Arial, sans-serif;
+}
+
+/* Configuración general */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100vh;
+    font-family: var(--font-main);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    overflow-x: hidden;
+}
+
+/* Contenedores principales */
+header,
+section,
+footer {
+    padding: 40px;
+}
+
+/* Contenido multimedia adaptable */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+}
+
+/* Adaptación para pantallas pequeñas */
+@media (max-width: 768px) {
+    header,
+    section,
+    footer {
+        padding: 20px;
+    }
+}
