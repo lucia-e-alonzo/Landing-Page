@@ -1,20 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap');
 
-/* Variables globales */
+/* Variables globales del Sistema de Diseño */
 :root {
-    --bg-dark: #0f172a;
-    --card-bg: rgba(30, 41, 59, 0.7);
-    --primary: #3b82f6;
-    --secondary: #8b5cf6;
-    --text-light: #f8fafc;
-    --text-muted: #94a3b8;
-    --glass-border: rgba(255, 255, 255, 0.1);
-    
-    /* Colores para tags */
-    --tag-html: #e34f26;
-    --tag-css: #1572b6;
-    --tag-js: #f7df1e;
-    --tag-git: #f05032;
+    --color-primary-dark: #2E4034; /* Verde bosque oscuro */
+    --color-primary-light: #F6EFEA; /* Beige/crema cálido */
+    --color-white: #FFFFFF;
+    --color-text-main: #333333; /* Gris oscuro para párrafos */
+    --color-text-heading: #222222; /* Casi negro para títulos */
+    --glass-border: rgba(0, 0, 0, 0.05);
 }
 
 * {
@@ -24,46 +17,26 @@
 }
 
 body {
-    font-family: 'Poppins', sans-serif;
-    background-color: var(--bg-dark);
-    color: var(--text-light);
+    font-family: 'Inter', sans-serif;
+    background-color: var(--color-white);
+    color: var(--color-text-main);
+    line-height: 1.6; /* Respiración solicitada */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Merriweather', serif;
+    color: var(--color-text-heading);
+    font-weight: 400;
 }
 
 /* =========================================
-   CRONOLOGÍA Y ANIMACIONES (HU-3)
+   LÍNEA DE TIEMPO VERTICAL ELEGANTE (HU-3)
    ========================================= */
 .timeline-section {
-    padding: 6rem 2rem;
+    padding: 100px 2rem; /* Padding generoso (80px - 120px) */
     position: relative;
     overflow: hidden;
-    background: radial-gradient(circle at top, #1e293b 0%, #0f172a 100%);
-}
-
-/* Formas decorativas de fondo */
-.bg-shape {
-    position: absolute;
-    filter: blur(100px);
-    z-index: 0;
-    opacity: 0.5;
-}
-.shape-1 {
-    top: -10%; left: -10%;
-    width: 400px; height: 400px;
-    background: var(--primary);
-    border-radius: 50%;
-}
-.shape-2 {
-    bottom: 20%; right: -5%;
-    width: 300px; height: 300px;
-    background: var(--secondary);
-    border-radius: 50%;
-}
-.shape-3 {
-    top: 40%; left: 40%;
-    width: 250px; height: 250px;
-    background: #ec4899;
-    border-radius: 50%;
-    opacity: 0.3;
+    background-color: var(--color-primary-light); /* Fondo crema */
 }
 
 .timeline-header {
@@ -73,18 +46,15 @@ body {
     z-index: 1;
 }
 
-.gradient-text {
-    font-size: 3rem;
-    font-weight: 700;
-    background: linear-gradient(135deg, #60a5fa, #c084fc);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+.timeline-header h2 {
+    color: var(--color-primary-dark); /* Título en verde bosque */
+    font-size: 2.8rem;
     margin-bottom: 1rem;
 }
 
 .timeline-subtitle {
-    color: var(--text-muted);
-    font-size: 1.2rem;
+    color: var(--color-text-main);
+    font-size: 1.1rem;
     max-width: 600px;
     margin: 0 auto;
 }
@@ -97,22 +67,22 @@ body {
     z-index: 1;
 }
 
-/* Línea central brillante */
+/* Línea central elegante */
 .timeline::before {
     content: '';
     position: absolute;
     top: 0;
     left: 50%;
     transform: translateX(-50%);
-    width: 4px;
+    width: 2px;
     height: 100%;
-    background: linear-gradient(to bottom, transparent, var(--primary), var(--secondary), transparent);
-    box-shadow: 0 0 15px var(--primary);
+    background: var(--color-primary-dark);
+    opacity: 0.2;
 }
 
 .timeline-item {
     width: 100%;
-    margin-bottom: 4rem;
+    margin-bottom: 5rem;
     display: flex;
     justify-content: center;
     position: relative;
@@ -130,130 +100,147 @@ body {
 .timeline-node {
     position: absolute;
     left: 50%;
-    top: 20px;
+    top: 50px;
     transform: translateX(-50%);
     width: 20px;
     height: 20px;
-    background-color: var(--bg-dark);
-    border: 4px solid var(--primary);
+    background-color: var(--color-primary-light);
+    border: 3px solid var(--color-primary-dark);
     border-radius: 50%;
     z-index: 3;
-    box-shadow: 0 0 10px var(--primary);
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
 }
 
 .timeline-item:hover .timeline-node {
-    background-color: var(--primary);
-    box-shadow: 0 0 20px var(--primary), 0 0 40px var(--primary);
-    transform: translateX(-50%) scale(1.2);
+    background-color: var(--color-primary-dark);
+    transform: translateX(-50%) scale(1.3);
 }
 
-/* Tarjetas Glassmorphism */
-.glass-card {
-    background: var(--card-bg);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid var(--glass-border);
-    width: 45%;
-    padding: 2rem;
-    border-radius: 16px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+/* Contenedor de la Tarjeta Expandible */
+.timeline-card {
+    width: 42%;
     position: relative;
-    z-index: 2;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    z-index: 1;
+    background: var(--color-white);
+    border-radius: 4px; /* Diseño flat sutil */
+    border: 1px solid var(--glass-border);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    padding: 2.5rem 2rem;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    /* Transición fluida base */
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
-.timeline-item:hover .glass-card {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
-    border-color: rgba(255, 255, 255, 0.2);
+/* Elevamos el z-index al interactuar (incluso en hover leve si se desea, pero requerido en expandido) */
+.timeline-item:hover .timeline-card {
+    border-color: rgba(46, 64, 52, 0.2);
 }
 
-/* Contenido de la tarjeta */
-.member-role {
+/* Estado Expandido */
+.timeline-card.is-expanded {
+    transform: scale(1.15); /* Agrandar desde el centro */
+    z-index: 10; /* Flota sobre la línea y las demás */
+    box-shadow: 0 20px 40px rgba(0,0,0,0.12); /* Pop-out */
+    border-color: var(--color-primary-dark);
+}
+
+/* Header de la tarjeta */
+.card-header {
+    width: 100%;
+}
+
+/* Detalles ocultos inicialmente */
+.card-details {
+    width: 100%;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    margin-top: 0;
+}
+
+/* Revelar detalles en estado expandido */
+.timeline-card.is-expanded .card-details {
+    max-height: 500px;
+    opacity: 1;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--glass-border);
+}
+
+/* Estilos de Iconos y Textos */
+.tech-icon {
+    font-family: 'Inter', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    background-color: var(--color-primary-light);
+    color: var(--color-primary-dark);
+    border: 1px solid rgba(46, 64, 52, 0.1);
     display: inline-block;
-    color: var(--primary);
-    font-size: 0.85rem;
+}
+
+.card-header h3 { 
+    font-size: 1.6rem; 
+    margin-bottom: 0.5rem; 
+    color: var(--color-primary-dark);
+}
+
+.card-header p { 
+    font-size: 1rem; 
+    color: var(--color-text-main); 
+    margin-bottom: 0; 
+}
+
+.click-hint {
+    font-size: 0.8rem;
+    color: var(--color-primary-dark);
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    font-weight: 700;
-    margin-bottom: 0.5rem;
+    animation: pulse 2s infinite;
+    margin-top: 1.5rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
 }
 
-.item-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: white;
+/* Desvanecer click-hint cuando está expandido */
+.timeline-card.is-expanded .click-hint {
+    opacity: 0;
+    visibility: hidden;
+    max-height: 0;
+    margin-top: 0;
 }
 
-.item-desc {
-    color: var(--text-muted);
+.card-details h4 {
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+    color: var(--color-primary-dark);
+}
+
+.card-details p {
     font-size: 0.95rem;
     line-height: 1.6;
-    margin-bottom: 1.5rem;
+    color: var(--color-text-main);
 }
 
-/* Etiquetas de tecnologías */
-.item-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.8rem;
-    margin-bottom: 1.5rem;
-}
-
-.tech-tag {
-    font-size: 0.75rem;
-    font-weight: 600;
-    padding: 4px 10px;
-    border-radius: 20px;
-    color: white;
-    letter-spacing: 0.5px;
-}
-
-.tech-tag.html { background: rgba(227, 79, 38, 0.2); color: #ff7651; border: 1px solid rgba(227, 79, 38, 0.4); }
-.tech-tag.css { background: rgba(21, 114, 182, 0.2); color: #51a5ff; border: 1px solid rgba(21, 114, 182, 0.4); }
-.tech-tag.js { background: rgba(247, 223, 30, 0.2); color: #f9e658; border: 1px solid rgba(247, 223, 30, 0.4); }
-.tech-tag.git { background: rgba(240, 80, 50, 0.2); color: #ff856e; border: 1px solid rgba(240, 80, 50, 0.4); }
-
-/* Cajas de código estilo macOS */
-.mac-style {
-    background: #0d1117;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.mac-header {
-    background: #161b22;
-    padding: 8px 12px;
-    display: flex;
-    gap: 6px;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.dot {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-}
-.dot.red { background-color: #ff5f56; }
-.dot.yellow { background-color: #ffbd2e; }
-.dot.green { background-color: #27c93f; }
-
-.mac-style pre {
-    padding: 1rem;
-    margin: 0;
-    color: #e6edf3;
-    font-family: 'Fira Code', 'Courier New', Courier, monospace;
-    font-size: 0.85rem;
-    overflow-x: auto;
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    50% { opacity: 1; }
+    100% { opacity: 0.5; }
 }
 
 /* --- ANIMACIONES DE SCROLL --- */
 .hidden {
     opacity: 0;
-    transform: translateY(60px);
-    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    transform: translateY(40px);
+    transition: all 0.9s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .show {
@@ -275,7 +262,7 @@ body {
         transform: translateX(-50%) scale(1.2);
     }
     
-    .timeline-content {
+    .flip-container {
         width: calc(100% - 70px);
         margin-left: 70px;
     }
@@ -285,7 +272,7 @@ body {
         justify-content: flex-start;
     }
     
-    .gradient-text {
+    .timeline-header h2 {
         font-size: 2.2rem;
     }
 }
