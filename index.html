@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nexus Code - Landing Page</title>
+    <!-- Aquí conectamos tu archivo de estilos -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+    <!-- INICIO SECCIÓN: QUÉ HACEMOS (HU-3 CRONOLOGÍA) -->
+    <section id="que-hacemos" class="timeline-section">
+        <div class="timeline-header">
+            <h2>Cómo lo construimos</h2>
+            <p class="timeline-subtitle">Arquitectura y flujo de trabajo colaborativo</p>
+            
+            <div class="tech-stack">
+                <span class="tech-tag">HTML5</span>
+                <span class="tech-tag">CSS3</span>
+                <span class="tech-tag">Vanilla JS</span>
+                <span class="tech-tag">Git / GitHub</span>
+            </div>
+        </div>
+
+        <div class="timeline">
+            
+            <div class="timeline-item hidden">
+                <div class="timeline-content">
+                    <h3>HU-1: Encabezado</h3>
+                    <p><strong>Comportamiento:</strong> El visionario del primer impacto. Enfocado en tipografías llamativas y configurar el "Hero Section".</p>
+                    <p><strong>Tarea:</strong> Asegurar que apenas un visitante abra la página, el nombre del equipo y el lema se lean fuerte y claro sin hacer scroll.</p>
+                    <div class="code-box">
+                        <span class="code-label">Código IA Generado:</span>
+<pre><code>&lt;header class="hero-section"&gt;
+  &lt;h1&gt;Nexus Code&lt;/h1&gt;
+  &lt;p&gt;Construyendo soluciones, conectando estudiantes&lt;/p&gt;
+&lt;/header&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item hidden">
+                <div class="timeline-content">
+                    <h3>HU-2: Integrantes</h3>
+                    <p><strong>Comportamiento:</strong> El organizador de datos. Persiguiendo al equipo por WhatsApp para pedir fotos profesionales y roles.</p>
+                    <p><strong>Tarea:</strong> Diseñar una cuadrícula perfecta para que las 5 tarjetas se vean simétricas sin que las imágenes se deformen.</p>
+                    <div class="code-box">
+                        <span class="code-label">Código IA Generado:</span>
+<pre><code>.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item hidden">
+                <div class="timeline-content">
+                    <h3>HU-3: Qué Hacemos (Tú)</h3>
+                    <p><strong>Comportamiento:</strong> El comunicador del producto. Explicando el "por qué" el equipo está aquí a través de una cronología interactiva.</p>
+                    <p><strong>Tarea:</strong> Redactar un título directo y diseñar visualmente esta misma línea de tiempo con animaciones al hacer scroll.</p>
+                    <div class="code-box">
+                        <span class="code-label">Código IA Generado:</span>
+<pre><code>const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add('show');
+  });
+});</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item hidden">
+                <div class="timeline-content">
+                    <h3>HU-4: Contacto</h3>
+                    <p><strong>Comportamiento:</strong> El analista de conexiones y cierre. Definiendo el correo de contacto grupal y los enlaces a GitHub.</p>
+                    <p><strong>Tarea:</strong> Construir el Footer asegurándose de que todos los enlaces abran en pestañas nuevas.</p>
+                    <div class="code-box">
+                        <span class="code-label">Código IA Generado:</span>
+<pre><code>&lt;footer class="footer"&gt;
+  &lt;a href="https://github.com" target="_blank" rel="noopener"&gt;
+    Nuestro GitHub
+  &lt;/a&gt;
+&lt;/footer&gt;</code></pre>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item hidden">
+                <div class="timeline-content">
+                    <h3>HU-5: Base Transversal</h3>
+                    <p><strong>Comportamiento:</strong> El "Arquitecto CSS" o supervisor de diseño. Cruza por el trabajo de todos.</p>
+                    <p><strong>Tarea:</strong> Definir la paleta oficial y probar que el trabajo de todos se apile correctamente en la pantalla de un celular.</p>
+                    <div class="code-box">
+                        <span class="code-label">Código IA Generado:</span>
+<pre><code>@media (max-width: 768px) {
+  .timeline::before {
+    left: 20px;
+  }
+}</code></pre>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- FIN SECCIÓN: QUÉ HACEMOS -->
+
+    <!-- Aquí conectamos tu archivo de JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
