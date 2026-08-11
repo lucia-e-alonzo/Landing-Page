@@ -1,3 +1,4 @@
+@import url('./header.css');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Merriweather:wght@300;400;700&display=swap');
 
 /* Variables globales del Sistema de Diseño */
@@ -1843,3 +1844,6 @@ footer {
 
 } 
 
+/* =========================================================
+   ESTILO DEFINITIVO DEL HEADER
+   ========================================================= */
